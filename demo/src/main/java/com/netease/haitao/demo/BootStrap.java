@@ -20,9 +20,9 @@ import java.util.List;
 public class BootStrap {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring-spi.xml");
+        ConfigurableApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"classpath:spring-spi.xml"}
+                , false, null);
         context.refresh();
-
         ValidateSeller validateSeller = (ValidateSeller) context.getBean("spiValidateSeller");
         List<ValidateSellerResult> validateSellerResultList = validateSeller.invoke(new ValidateSellerContext());
 

@@ -23,7 +23,7 @@ public class KaolaValidateSeller implements ValidateSeller {
 
     @Override
     public boolean condition(ValidateSellerContext context) {
-        return false;
+        return true;
     }
 
     @Override
